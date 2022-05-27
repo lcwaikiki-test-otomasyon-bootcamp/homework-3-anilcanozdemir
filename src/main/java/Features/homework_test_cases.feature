@@ -43,7 +43,7 @@ Feature: Home Page
     Then should see "<passErr>" Password Empty message
     Examples:
       | emailErr                           | passErr                   |
-      | Lütfen e-posta adresinizi giriniz. |Lütfen şifrenizi giriniz.|
+      | Lütfen e-posta adresinizi giriniz. | Lütfen şifrenizi giriniz. |
 
   @Empty @Password
   Scenario Outline: Empty Password
@@ -75,7 +75,7 @@ Feature: Home Page
     Examples:
       | email              | passErr                                    |
       | enes@mail@mail.com | Lütfen geçerli bir e-posta adresi giriniz. |
-    
+
   @FalseLogin
   Scenario Outline: False Login
     Given Enes is on Login Page

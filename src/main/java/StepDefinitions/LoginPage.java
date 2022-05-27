@@ -8,8 +8,8 @@ import util.DriverFactory;
 
 public class LoginPage {
 
-    Pages.LoginPage  loginPage=new Pages.LoginPage();
-    WebDriver driver= DriverFactory.getDriver();
+    Pages.LoginPage loginPage = new Pages.LoginPage();
+    WebDriver driver = DriverFactory.getDriver();
 
     @Then("should see Login Page")
     public void shouldSeeLoginPage() {
@@ -104,7 +104,7 @@ public class LoginPage {
     }
 
     @Then("should not see Password Empty message")
-    public void shouldNotSeePasswordEmptyMessage() {
+    public void shouldNotSeePasswordEmptyMessage() throws Exception {
         loginPage.shouldNotSeePasswordEmptyMessage();
     }
 

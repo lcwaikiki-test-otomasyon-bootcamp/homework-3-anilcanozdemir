@@ -8,8 +8,8 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverFactory {
     private static WebDriver driver;
-    public  static  WebDriver getDriver()
-    {
+
+    public static WebDriver getDriver() {
         if (driver == null) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
