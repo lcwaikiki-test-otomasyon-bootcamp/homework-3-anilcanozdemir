@@ -11,29 +11,29 @@ Feature: Home Page
   Scenario: Check Email Components
     Given Enes is on Login Page
     When click "E-Posta" radio button
-    Then should see "GIRIS YAP" title
+    Then should see "GİRİŞ YAP" title
     Then should see "E-Posta" radio button
     Then should see "Telefon" radio button
     Then should see "E-Posta Adresiniz" text on Email
-    Then should see "Sifreniz" text on Password
+    Then should see "Şifreniz" text on Password
     Then should see Show Password Icon
-    Then should see "Beni Hatirla" remember me
-    Then should see "Sifremi Unuttum" forgot password
-    Then should see "GIRIS YAP" login button
+    Then should see "Beni hatırla" remember me
+    Then should see "Şifremi Unuttum" forgot password
+    Then should see "GIRIŞ YAP" login button
 
   @Phone @Components
   Scenario: Check Phone Components
     Given Enes is on Login Page
     When click "Telefon" radio button
-    Then should see "GIRIS YAP" title
+    Then should see "GİRİŞ YAP" title
     Then should see "E-Posta" radio button
     Then should see "Telefon" radio button
     Then should see Phone Text Box
-    Then should see "Sifreniz" text on Password
+    Then should see "Şifreniz" text on Password
     Then should see Show Password Icon
-    Then should see "Beni Hatirla" remember me
-    Then should see "Sifremi Unuttum" forgot password
-    Then should see "GIRIS YAP" login button
+    Then should see "Beni hatırla" remember me
+    Then should see "Şifremi Unuttum" forgot password
+    Then should see "GIRIŞ YAP" login button
 
   @Empty
   Scenario Outline: Empty Login
@@ -43,7 +43,7 @@ Feature: Home Page
     Then should see "<passErr>" Password Empty message
     Examples:
       | emailErr                           | passErr                   |
-      | Lütfen e-posta adresinizi giriniz. | Lütfen şifrenizi giriniz. |
+      | Lütfen e-posta adresinizi giriniz. |Lütfen şifrenizi giriniz.|
 
   @Empty @Password
   Scenario Outline: Empty Password

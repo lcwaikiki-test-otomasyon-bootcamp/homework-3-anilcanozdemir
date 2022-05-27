@@ -59,12 +59,12 @@ public class LoginPage {
     }
 
     @Then("should see {string} forgot password")
-    public void shouldSeeForgotPassword(String arg0) {
+    public void shouldSeeForgotPassword(String arg0) throws Exception {
         loginPage.checkForgotPassword(arg0);
     }
 
     @Then("should see {string} login button")
-    public void shouldSeeLoginButton(String arg0) {
+    public void shouldSeeLoginButton(String arg0) throws Exception {
         loginPage.checkLoginButton(arg0);
     }
 
@@ -79,12 +79,12 @@ public class LoginPage {
     }
 
     @Then("should see {string} Email Empty message")
-    public void shouldSeeEmailEmptyMessage(String arg0) {
+    public void shouldSeeEmailEmptyMessage(String arg0) throws Exception {
         loginPage.checkEmailEmptyMessage(arg0);
     }
 
     @Then("should see {string} Password Empty message")
-    public void shouldSeePasswordEmptyMessage(String arg0) {
+    public void shouldSeePasswordEmptyMessage(String arg0) throws Exception {
         loginPage.checkPasswordEmptyMessage(arg0);
     }
 
@@ -94,32 +94,41 @@ public class LoginPage {
     }
 
     @Then("should not see Email Empty message")
-    public void shouldNotSeeEmailEmptyMessage() {
+    public void shouldNotSeeEmailEmptyMessage() throws Exception {
+        loginPage.shouldNotSeeEmailEmptyMessage();
     }
 
     @When("type Password {string}")
     public void typePassword(String arg0) {
+        loginPage.typePassword(arg0);
     }
 
     @Then("should not see Password Empty message")
     public void shouldNotSeePasswordEmptyMessage() {
+        loginPage.shouldNotSeePasswordEmptyMessage();
     }
 
     @When("type Email {string} and click login")
     public void typeEmailAndClickLogin(String arg0) {
+        loginPage.typeEmail(arg0);
+        loginPage.clickLogin();
+
     }
 
     @Then("should see {string} Email False message")
     public void shouldSeeEmailFalseMessage(String arg0) {
-        loginPage.checkEmailFalseMessage();
+        loginPage.shouldNotSeeFalseMessage(arg0);
     }
 
     @When("type Email {string}, Password {string} and click login")
     public void typeEmailPasswordAndClickLogin(String arg0, String arg1) {
+        loginPage.typeEmail(arg0);
+        loginPage.typePassword(arg1);
+        loginPage.clickLogin();
     }
 
     @Then("should see {string} Login Error message")
     public void shouldSeeLoginErrorMessage(String arg0) throws Exception {
-        loginPage.checkRadioButton(arg0);
+        loginPage.checkLoginErrorMessage(arg0);
     }
 }
