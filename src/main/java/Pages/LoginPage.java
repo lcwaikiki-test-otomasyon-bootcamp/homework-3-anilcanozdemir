@@ -144,11 +144,10 @@ public class LoginPage {
     }
 
     public void shouldNotSeeEmailEmptyMessage() throws Exception {
+        System.out.println(driver.findElement(email).getAttribute("value")
+        );
         if(driver.findElement(email).getAttribute("value").equals(""))
-            return;
-            else {
-            throw new Exception("checkRememberMe");
-        }
+            throw new Exception("shouldNotSeeEmailEmptyMessage");
     }
 
 
@@ -157,17 +156,28 @@ public class LoginPage {
     }
 
     public void shouldNotSeePasswordEmptyMessage() throws Exception {
-        if(driver.findElement(email).getAttribute("value").equals(""))
-            return;
-        else {
-            throw new Exception("checkRememberMe");
+        System.out.println(driver.findElement(password).getAttribute("value"));
+        if(driver.findElement(password).getAttribute("value").equals(""))
+        {
+            throw new Exception("shouldNotSeePasswordEmptyMessage");
         }
 
     }
 
-    public void shouldNotSeeFalseMessage(String arg0) {
-    }
 
     public void checkLoginErrorMessage(String arg0) {
+    }
+
+    public void shouldSeeEmailFalseMessage(String arg0) throws Exception {
+        List<WebElement> webElementList = driver.findElements(By.className("text-input input-error"));
+        for (WebElement webElement : webElementList
+        ) {
+            if (webElement.getAttribute("name").equals("email"))
+                throw new Exception("checkLoginErrorMessage");
+
+        }
+
+
+
     }
 }

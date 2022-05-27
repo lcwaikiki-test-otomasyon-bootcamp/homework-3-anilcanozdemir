@@ -116,8 +116,8 @@ public class LoginPage {
     }
 
     @Then("should see {string} Email False message")
-    public void shouldSeeEmailFalseMessage(String arg0) {
-        loginPage.shouldNotSeeFalseMessage(arg0);
+    public void shouldSeeEmailFalseMessage(String arg0) throws Exception {
+        loginPage.shouldSeeEmailFalseMessage(arg0);
     }
 
     @When("type Email {string}, Password {string} and click login")
