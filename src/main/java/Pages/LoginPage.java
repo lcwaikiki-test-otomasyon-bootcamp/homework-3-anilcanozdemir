@@ -145,7 +145,7 @@ public class LoginPage {
 
     public void shouldNotSeeEmailEmptyMessage() throws Exception {
 
-        );
+
         if(driver.findElement(email).getAttribute("value").equals(""))
             throw new Exception("shouldNotSeeEmailEmptyMessage");
     }
